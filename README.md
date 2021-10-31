@@ -150,6 +150,13 @@ PS> git remote add origin git@github.com:MichinobuMaeda/ccuflutterpj20211031.git
 PS> git push -u origin main
 ```
 
+## プラットフォーム Android の追加
+
+```
+PS> flutter create --platforms=android .
+PS> flutter run -d emulator-5554
+```
+
 ## Firebase のプロジェクトの作成
 
 https://console.firebase.google.com/
