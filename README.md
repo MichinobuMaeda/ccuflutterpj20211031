@@ -174,9 +174,6 @@ https://console.firebase.google.com/
         - Default GCP resource location: asia-northeast1 (Tokyo)
         - Public-facing name: ccuflutterpj20211031
         - Support email: my address
-    - Usage and billing
-        - Detailes & settings
-            - Modify plan: Blaze
 - Authentication
     - Sign-in providers
         - Email/Password: Enable
@@ -188,43 +185,11 @@ https://console.firebase.google.com/
 
 ```
 $ firebase login
-$ firebase init functions
-? Please select an option: Use an existing project
-? Select a default Firebase project for this directory: ccuflutterpj20211031 (ccuflutterpj20211031)
-? What language would you like to use to write Cloud Functions? TypeScript
-? Do you want to use ESLint to catch probable bugs and enforce style? Yes
-? Do you want to install dependencies with npm now? No
-
-$ cd functions/
-$ yarn
-$ cd ..
-$ firebase init firestore
-? What file should be used for Firestore Rules? firestore.rules
-? What file should be used for Firestore indexes? firestore.indexes.json
-
-$ firebase init storage
-? What file should be used for Storage Rules? storage.rules
 
 $ firebase init hosting
 ? What do you want to use as your public directory? build/web
 ? Configure as a single-page app (rewrite all urls to /index.html)? No
 ? Set up automatic builds and deploys with GitHub? No
-
-$ firebase init emulators
-? Which Firebase emulators do you want to set up?
- Authentication Emulator,
- Functions Emulator,
- Firestore Emulator,
- Hosting Emulator,
- Storage Emulator
-? Which port do you want to use for the auth emulator? 9099
-? Which port do you want to use for the functions emulator? 5001
-? Which port do you want to use for the firestore emulator? 8080
-? Which port do you want to use for the hosting emulator? 5000
-? Which port do you want to use for the storage emulator? 9199
-? Would you like to enable the Emulator UI? Yes
-? Which port do you want to use for the Emulator UI (leave empty to use any available port)? 4040
-? Would you like to download the emulators now? No
 
 $ firebase init hosting:github
 ? For which GitHub repository would you like to set up a GitHub workflow? (format: user/repository) MichinobuMaeda/ccuflutterpj20211031
