@@ -157,6 +157,12 @@ PS> flutter create --platforms=android .
 PS> flutter run -d emulator-5554
 ```
 
+## Git pull request
+
+```
+PS> git checkout -b changethemecolor
+```
+
 ## Firebase のプロジェクトの作成
 
 https://console.firebase.google.com/
