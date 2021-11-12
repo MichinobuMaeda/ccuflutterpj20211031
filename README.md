@@ -136,6 +136,8 @@ VS Code でターミナルを開く
 PS> flutter run -d chrome --web-port 5000
 ```
 
+デモで使用した ARM 版 Windows の環境では動かないコマンドがあるので、以下は Mac の bash で実施。
+
 ## GitHub 初期登録
 
 GitHub
@@ -146,25 +148,25 @@ GitHub
         - Repository name: ccuflutterpj20211031
 
 ```
-PS> git init
-PS> git add .
-PS> git commit -m "first commit"
-PS> git branch -M main
-PS> git remote add origin git@github.com:MichinobuMaeda/ccuflutterpj20211031.git
-PS> git push -u origin main
+$ git init
+$ git add .
+$ git commit -m "first commit"
+$ git branch -M main
+$ git remote add origin git@github.com:MichinobuMaeda/ccuflutterpj20211031.git
+$ git push -u origin main
 ```
 
 ## プラットフォーム Android の追加
 
 ```
-PS> flutter create --platforms=android .
-PS> flutter run -d emulator-5554
+$ flutter create --platforms=android .
+$ flutter run -d emulator-5554
 ```
 
 ## Git pull request
 
 ```
-PS> git checkout -b changethemecolor
+$ git checkout -b changethemecolor
 ```
 
 ## Firebase のプロジェクトの作成
@@ -285,3 +287,19 @@ GitHub Actions の [ジョブ](https://github.com/MichinobuMaeda/ccuflutterpj202
 Firebase Hosting のプレビュー用の場所 <https://ccuflutterpj20211031--pr2-changethemecolor-tp6u6scu.web.app/> にアプリがデプロイされる。この URLは毎回変わる。 Actions のページにジョブからの出力として表示されている。メールでも通知される。
 
 Pull Request は権限のある人が ``main`` にマージする。
+マージは GitHub の Web 上でできる。コマンドでマージする場合は以下の通り。
+
+```
+$ git checkout main
+$ git branch
+  changethemecolor
+* main
+
+$ git merge changethemecolor
+$ git push
+```
+
+GitHub Actions のジョブが自動で動いて本番用のURL https://ccuflutterpj20211031.web.app にデプロイされる。
+PWA ( Progressive Web Apps ) としてローカルにキャッシュされている場合、
+PC　のブラウザは [Ctrl]+[Shift]+[R] 等でページを更新する必要がある。
+スマホやタブレットの場合は PWA の登録を消去するプログラムが必要。
