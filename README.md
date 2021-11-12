@@ -361,4 +361,9 @@ $ git commit -m "bug fix: ボタンを押したときの処理を入れ忘れて
 $ git push
 ```
 
+Firestore　を使う前と同じように動作する。
 
+[Firebase のコンソール](https://console.firebase.google.com/project/)
+で値を編集すると、即時に反映される。
+
+Chrome と Firefox を並べて表示して、どちらか一方でボタンをクリックすると、両方の表示が更新される。

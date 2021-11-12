@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+// Firestore の処理をするクラス。
 class FirestoreModel extends ChangeNotifier {
   late final FirebaseFirestore _db;
   int _counter01 = 0;
@@ -36,6 +36,7 @@ class FirestoreModel extends ChangeNotifier {
 
 void main() {
   runApp(
+    // FirestoreModel を変更通知の元として登録する。
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => FirestoreModel()),
@@ -94,6 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+
+    // FirestoreModel を初期化する。
     Provider.of<FirestoreModel>(context, listen: false).listen();
   }
 
