@@ -6,11 +6,18 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - main
+env:
+  flutter_version: "2.5.3"
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: ${{ env.flutter_version }}
+      - run: flutter pub get
+      - run: flutter build web --release
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
