@@ -212,7 +212,7 @@ https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
 i  Action required: Push any new workflow file(s) to your repo
 ```
 
-# サンプルアプリのデプロイ
+## サンプルアプリのデプロイ
 
 GitHub Actions 上で firebase-tools を利用するために Node.js の設定を追加。　
 
@@ -251,5 +251,30 @@ GitHub Actions の [ジョブ](https://github.com/MichinobuMaeda/ccuflutterpj202
 が自動で起動する。
 
 <https://ccuflutterpj20211031.web.app/> にアプリがデプロイされる。
+
+## Pull Request 
+
+Pull Request 用のブランチを作成する。今回はテーマカラーの変更ということで ``changethemecolor`` .
+
+```
+$ git checkout -m changethemecolor
+$ git branch
+* changethemecolor
+  main
+```
+
+``main.dart`` を編集してテーマカラーを変更する。
+
+```
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+      ),
+```
+
+```
+$ git add .
+$ git commit -m "テーマカラー変更"
+$ git push
+```
 
 
