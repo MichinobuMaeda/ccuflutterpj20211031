@@ -26,7 +26,7 @@ class FirestoreModel extends ChangeNotifier {
   int get counter01 => _counter01;
 
   Future<void> incrementCounter01() async {
-    await _db.collection('counters').doc('counter01').update({
+    await _db.collection('counters').doc('counter01').set({
       'value': (_counter01 + 1),
     });
   }
@@ -146,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 'You have pushed the button this many times:',
               ),
               Text(
-                '$firestoreModel.value',
+                '${firestoreModel.counter01}',
                 style: Theme.of(context).textTheme.headline4,
               ),
             ],

@@ -346,7 +346,14 @@ $ firebase init firestore
 ? What file should be used for Firestore indexes? firestore.indexes.json
 ```
 
-``firestore.rules`` にコレクション　``counters`` の読み書き権限を追加。　
+``firestore.rules`` にコレクション　``counters`` の読み書き権限を追加。まだ
+Actions にこれを本番環境に反映する処理を入れていないので手動で実施する。　
+
+```
+$ firebase deploy --only firestore
+```
+
+変更を push する。
 
 ```
 $ git add .
