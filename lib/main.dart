@@ -15,9 +15,11 @@ class FirestoreModel extends ChangeNotifier {
         if (doc.exists) {
           _counter01 = doc.get('value');
           debugPrint('set counter: $_counter01');
+          notifyListeners();
         } else {
           _counter01 = 0;
           debugPrint('reset counter: 0');
+          notifyListeners();
         }
       },
     );
