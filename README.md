@@ -303,3 +303,21 @@ GitHub Actions のジョブが自動で動いて本番用のURL https://ccuflutt
 PWA ( Progressive Web Apps ) としてローカルにキャッシュされている場合、
 PC　のブラウザは [Ctrl]+[Shift]+[R] 等でページを更新する必要がある。
 スマホやタブレットの場合は PWA の登録を消去するプログラムが必要。
+
+## Firestore
+
+サンプルのカウンターを Firebase の Firestore から取得するデータに差し替える。
+
+修正用のブランチを作成する。
+
+```
+$ git checkout -b addfirebase
+```
+
+修正を push する。
+
+```
+$ git add .
+$ git commit -m "サンプルのカウンターを Firebase の Firestore から取得するデータに差し替え"
+$ git push
+```
