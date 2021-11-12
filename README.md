@@ -328,3 +328,30 @@ GitHub Actions が自動で起動するので、終了したらプレビュー�
 <https://ccuflutterpj20211031--pr3-addfirebase-xcksgjz3.web.app/>
 を参照する。
 
+バグっていたので修正。
+
+```
+$ git add .
+$ git commit -m "bug fix: ボタンを押したときの処理を入れ忘れていた"
+$ git push
+```
+
+該当ブランチで一度　Pull Request すると、その後は push するだけで自動で Actions　が起動する。
+
+Firestore のアクセス件の設定を忘れていた。
+
+```
+$ firebase init firestore
+? What file should be used for Firestore Rules? firestore.rules
+? What file should be used for Firestore indexes? firestore.indexes.json
+```
+
+``firestore.rules`` にコレクション　``counters`` の読み書き権限を追加。　
+
+```
+$ git add .
+$ git commit -m "bug fix: ボタンを押したときの処理を入れ忘れていた"
+$ git push
+```
+
+
