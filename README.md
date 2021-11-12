@@ -276,7 +276,7 @@ $ git branch
 ```
 $ git add .
 $ git commit -m "テーマカラー変更"
-$ git push
+$ git push --set-upstream origin changethemecolor
 ```
 
 GitHub に "Compaire and pull request" というボタンが表示されるので（設定によっては日本語かもしれない）、クリックして
@@ -319,5 +319,12 @@ $ git checkout -b addfirebase
 ```
 $ git add .
 $ git commit -m "サンプルのカウンターを Firebase の Firestore から取得するデータに差し替え"
-$ git push
+$ git push --set-upstream origin addfirebase
 ```
+
+GitHub 上で Pull Request する。
+
+GitHub Actions が自動で起動するので、終了したらプレビュー用のデプロイ先
+<https://ccuflutterpj20211031--pr3-addfirebase-xcksgjz3.web.app/>
+を参照する。
+

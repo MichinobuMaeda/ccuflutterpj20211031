@@ -26,7 +26,7 @@ class FirestoreModel extends ChangeNotifier {
   int get counter01 => _counter01;
 
   Future<void> incrementCounter01() async {
-    _db.collection('counters').doc('counter01').update({
+    await _db.collection('counters').doc('counter01').update({
       'value': (_counter01 + 1),
     });
   }
@@ -154,7 +154,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         floatingActionButton: FloatingActionButton(
           // onPressed: _incrementCounter,  --> FireStore から取得する値に差し替え。
-          onPressed: () {},
+          onPressed: () async {
+            await firestoreModel.incrementCounter01();
+          },
           tooltip: 'Increment',
           child: const Icon(Icons.add),
         ), // This trailing comma makes auto-formatting nicer for build methods.
