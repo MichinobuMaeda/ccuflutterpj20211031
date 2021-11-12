@@ -1,0 +1,26 @@
+{
+  "name": "ccuflutterpj20211031",
+  "version": "1.0.0",
+  "description": "## 開発環境",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichinobuMaeda/ccuflutterpj20211031.git"
+  },
+  "author": "Michinobu Maeda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichinobuMaeda/ccuflutterpj20211031/issues"
+  },
+  "homepage": "https://github.com/MichinobuMaeda/ccuflutterpj20211031#readme",
+  "devDependencies": {
+    "firebase-tools": "^9.22.0"
+  }
+}
