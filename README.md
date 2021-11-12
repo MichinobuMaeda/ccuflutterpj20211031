@@ -276,7 +276,7 @@ $ git branch
 ```
 $ git add .
 $ git commit -m "テーマカラー変更"
-$ git push
+$ git push --set-upstream origin changethemecolor
 ```
 
 GitHub に "Compaire and pull request" というボタンが表示されるので（設定によっては日本語かもしれない）、クリックして
@@ -303,3 +303,67 @@ GitHub Actions のジョブが自動で動いて本番用のURL https://ccuflutt
 PWA ( Progressive Web Apps ) としてローカルにキャッシュされている場合、
 PC　のブラウザは [Ctrl]+[Shift]+[R] 等でページを更新する必要がある。
 スマホやタブレットの場合は PWA の登録を消去するプログラムが必要。
+
+## Firestore
+
+サンプルのカウンターを Firebase の Firestore から取得するデータに差し替える。
+
+修正用のブランチを作成する。
+
+```
+$ git checkout -b addfirebase
+```
+
+修正を push する。
+
+```
+$ git add .
+$ git commit -m "サンプルのカウンターを Firebase の Firestore から取得するデータに差し替え"
+$ git push --set-upstream origin addfirebase
+```
+
+GitHub 上で Pull Request する。
+
+GitHub Actions が自動で起動するので、終了したらプレビュー用のデプロイ先
+<https://ccuflutterpj20211031--pr3-addfirebase-xcksgjz3.web.app/>
+を参照する。
+
+バグっていたので修正。
+
+```
+$ git add .
+$ git commit -m "bug fix: ボタンを押したときの処理を入れ忘れていた"
+$ git push
+```
+
+該当ブランチで一度　Pull Request すると、その後は push するだけで自動で Actions　が起動する。
+
+Firestore のアクセス件の設定を忘れていた。
+
+```
+$ firebase init firestore
+? What file should be used for Firestore Rules? firestore.rules
+? What file should be used for Firestore indexes? firestore.indexes.json
+```
+
+``firestore.rules`` にコレクション　``counters`` の読み書き権限を追加。まだ
+Actions にこれを本番環境に反映する処理を入れていないので手動で実施する。　
+
+```
+$ firebase deploy --only firestore
+```
+
+変更を push する。
+
+```
+$ git add .
+$ git commit -m "bug fix: ボタンを押したときの処理を入れ忘れていた"
+$ git push
+```
+
+Firestore　を使う前と同じように動作する。
+
+[Firebase のコンソール](https://console.firebase.google.com/project/)
+で値を編集すると、即時に反映される。
+
+Chrome と Firefox を並べて表示して、どちらか一方でボタンをクリックすると、両方の表示が更新される。
