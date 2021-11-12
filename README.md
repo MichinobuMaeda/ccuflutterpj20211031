@@ -1,5 +1,9 @@
 # 学習会 Firebase+Flutter 2021年10月31日
 
+``PS>`` は PowerShell のプロンプトを表す。　Linux　や　Mac　はシェル上で同等のことができる。
+
+``$`` は bash のプロンプトを表す。 Windows で WSL を利用しない場合は Git bash や PowerShell 上でも可。
+
 ## 開発環境
 
 Windows 11
@@ -206,7 +210,46 @@ $ firebase init hosting:github
 i  Action required: Visit this URL to revoke authorization for the Firebase CLI GitHub OAuth App:
 https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
 i  Action required: Push any new workflow file(s) to your repo
-
-$ mv build/web/404.html web/
-$ rm build/web/index.html
 ```
+
+# サンプルアプリのデプロイ
+
+GitHub Actions 上で firebase-tools を利用するために Node.js の設定を追加。　
+
+```
+$ npm init
+$ yarn -D add firebase-tools
+```
+
+GitHub Actions のワークフロー
+
+- .github
+    - workflows
+        - firebase-hosting-merge.yml
+        - firebase-hosting-pull-request.yml
+
+に、以下のタスクを追加する。
+
+- Flutter
+    - flutter コマンドのインストール
+    - ``pubspec.yaml`` に指定されたパッケージの追加
+    - ビルド ( Web )
+- Node.js
+    - node コマンド ( version: 14 ) のインストール
+    - yarn コマンドのインストール
+    - ``package.json`` に指定されたパッケージの追加
+
+GitHub　に push する。　
+
+```
+$ git add .
+$ git commit -m "修正内容等をここに書く。日本語可。"
+$ git push
+```
+
+GitHub Actions の [ジョブ](https://github.com/MichinobuMaeda/ccuflutterpj20211031/runs/4186212125?check_suite_focus=true)
+が自動で起動する。
+
+<https://ccuflutterpj20211031.web.app/> にアプリがデプロイされる。
+
+
