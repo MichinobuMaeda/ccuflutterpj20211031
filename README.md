@@ -225,8 +225,8 @@ GitHub Actions のワークフロー
 
 - .github
     - workflows
-        - firebase-hosting-merge.yml
-        - firebase-hosting-pull-request.yml
+        - ``firebase-hosting-merge.yml``
+        - ``firebase-hosting-pull-request.yml``
 
 に、以下のタスクを追加する。
 
@@ -248,9 +248,9 @@ $ git push
 ```
 
 GitHub Actions の [ジョブ](https://github.com/MichinobuMaeda/ccuflutterpj20211031/runs/4186212125?check_suite_focus=true)
-が自動で起動する。
+が自動で起動する。ここで使われるのは ``firebase-hosting-merge.yml`` の方。
 
-<https://ccuflutterpj20211031.web.app/> にアプリがデプロイされる。
+Firebase Hosting の本番用の場所 <https://ccuflutterpj20211031.web.app/> にアプリがデプロイされる。
 
 ## Pull Request 
 
@@ -277,4 +277,11 @@ $ git commit -m "テーマカラー変更"
 $ git push
 ```
 
+GitHub に "Compaire and pull request" というボタンが表示されるので（設定によっては日本語かもしれない）、クリックして
 
+GitHub Actions の [ジョブ](https://github.com/MichinobuMaeda/ccuflutterpj20211031/runs/4186400074?check_suite_focus=true)
+が自動で起動する。ここで使われるのは ``firebase-hosting-pull-request.yml`` の方。
+
+Firebase Hosting のプレビュー用の場所 <https://ccuflutterpj20211031--pr2-changethemecolor-tp6u6scu.web.app/> にアプリがデプロイされる。この URLは毎回変わる。 Actions のページにジョブからの出力として表示されている。メールでも通知される。
+
+Pull Request は権限のある人が ``main`` にマージする。
